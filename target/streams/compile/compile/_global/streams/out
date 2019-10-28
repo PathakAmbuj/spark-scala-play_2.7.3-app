@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/Ambuj/IdeaProjects/play-scala-starter-example/app/factory/SparkFactory.scala:11:7: identifier expected but '.' found.[0m
+[0m[[0m[31merror[0m] [0m[0m      .appName("spark-embedded-session").master("local").getOrCreate()[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/logback.xml,/Users/Ambuj/IdeaProjects/play-scala-starter-example/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/data.csv,/Users/Ambuj/IdeaProjects/play-scala-starter-example/target/scala-2.11/classes/data.csv)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/application.conf,/Users/Ambuj/IdeaProjects/play-scala-starter-example/target/scala-2.11/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/routes,/Users/Ambuj/IdeaProjects/play-scala-starter-example/target/scala-2.11/classes/routes)[0m
