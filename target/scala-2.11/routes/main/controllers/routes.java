@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/routes
-// @DATE:Mon Oct 28 21:12:24 IST 2019
+// @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-spark-app/conf/routes
+// @DATE:Tue Oct 29 13:13:14 IST 2019
 
 package controllers;
 

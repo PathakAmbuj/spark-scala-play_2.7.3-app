@@ -30,7 +30,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Trans
 </head>
 <body>
 <h1 style="text-align:center;">Welcome To REST Api Service Test Page</h1>
-<p>Below are the link for testing Rest api services</p>
+<hr>
+<hr>
+Below are the link for testing Rest api services
+<hr>
 <p>To get Json as response >>><a href="http://localhost:9000/runspark">Click Here</a><<<</p>
 <p>To Go to Job Submit Page >>><a href="/jobpage">Click Here</a></p>
 <p>To Go to Create Job Page >>><a href="/form">Click Here</a></p>
@@ -51,9 +54,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Trans
 
               /*
                   -- GENERATED --
-                  DATE: 2019-10-28T20:50:55.960
-                  SOURCE: /Users/Ambuj/IdeaProjects/play-scala-starter-example/app/views/welcome.scala.html
-                  HASH: c7e2333afef17366f0d5d9f3b7f27032d07645cf
+                  DATE: 2019-10-29T13:26:26.602
+                  SOURCE: /Users/Ambuj/IdeaProjects/play-scala-spark-app/app/views/welcome.scala.html
+                  HASH: 32fd70d2358ab9487a8a3748d5b0bf269b9880e3
                   MATRIX: 813->0
                   LINES: 26->1
                   -- GENERATED --

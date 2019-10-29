@@ -14,7 +14,7 @@ class HomeController @Inject()(cc: ControllerComponents)(implicit assetsFinder: 
   def loginCheck(user: String, password: String): Action[AnyContent] = {
     Action.async {
 
-      if (user.equals("ambuj") && password.equals("pathak")) {
+      if (user.equals("admin") && password.equals("admin")) {
         Future.successful(Ok(welcome.render()))
 
       } else {

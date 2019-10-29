@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/routes
-// @DATE:Mon Oct 28 21:12:24 IST 2019
+// @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-spark-app/conf/routes
+// @DATE:Tue Oct 29 13:13:14 IST 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -28,22 +28,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
-    def getJson: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.SparkAppController.getJson",
-      """
-        function(filePath0,outputCols1,maxRow2) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getjson" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("filePath", filePath0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("outputCols", outputCols1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("maxRow", maxRow2)])})
-        }
-      """
-    )
-  
     // @LINE:14
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SparkAppController.index",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "runspark"})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def getJson: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SparkAppController.getJson",
+      """
+        function(selectColumns0,filePath1,maxRow2,schema3) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getjson" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("selectColumns", selectColumns0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("filePath", filePath1), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("maxRow", maxRow2), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("schema", schema3)])})
         }
       """
     )

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/routes
-// @DATE:Mon Oct 28 21:12:24 IST 2019
+// @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-spark-app/conf/routes
+// @DATE:Tue Oct 29 13:13:14 IST 2019
 
 package router
 
@@ -56,7 +56,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """jobpage""", """controllers.HomeController.jobpage"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """form""", """controllers.FormController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """runspark""", """controllers.SparkAppController.index"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getjson""", """controllers.SparkAppController.getJson(filePath:String, outputCols:String, maxRow:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getjson""", """controllers.SparkAppController.getJson(selectColumns:String, filePath:String, maxRow:String, schema:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """submitjob""", """controllers.SparkAppController.runSparkJob(jarPath:String, mainClass:String, appName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(file:String)"""),
     Nil
@@ -161,12 +161,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("getjson")))
   )
   private[this] lazy val controllers_SparkAppController_getJson5_invoker = createInvoker(
-    SparkAppController_1.getJson(fakeValue[String], fakeValue[String], fakeValue[String]),
+    SparkAppController_1.getJson(fakeValue[String], fakeValue[String], fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.SparkAppController",
       "getJson",
-      Seq(classOf[String], classOf[String], classOf[String]),
+      Seq(classOf[String], classOf[String], classOf[String], classOf[String]),
       "GET",
       this.prefix + """getjson""",
       """""",
@@ -245,8 +245,8 @@ class Routes(
   
     // @LINE:15
     case controllers_SparkAppController_getJson5_route(params@_) =>
-      call(params.fromQuery[String]("filePath", None), params.fromQuery[String]("outputCols", None), params.fromQuery[String]("maxRow", None)) { (filePath, outputCols, maxRow) =>
-        controllers_SparkAppController_getJson5_invoker.call(SparkAppController_1.getJson(filePath, outputCols, maxRow))
+      call(params.fromQuery[String]("selectColumns", None), params.fromQuery[String]("filePath", None), params.fromQuery[String]("maxRow", None), params.fromQuery[String]("schema", None)) { (selectColumns, filePath, maxRow, schema) =>
+        controllers_SparkAppController_getJson5_invoker.call(SparkAppController_1.getJson(selectColumns, filePath, maxRow, schema))
       }
   
     // @LINE:16

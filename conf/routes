@@ -12,7 +12,7 @@ GET     /form                      controllers.FormController.index
 
 # Rest Services are implimented under below URL and Controllers using spark
 GET     /runspark                  controllers.SparkAppController.index
-GET     /getjson                   controllers.SparkAppController.getJson(filePath, outputCols, maxRow)
+GET     /getjson                   controllers.SparkAppController.getJson(selectColumns, filePath, maxRow, schema)
 GET     /submitjob                 controllers.SparkAppController.runSparkJob(jarPath, mainClass, appName)
 
 # Map static resources from the /public folder to the /assets URL path

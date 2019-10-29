@@ -1,260 +1,126 @@
-2019-10-28 20:55:15,091 [WARN] from org.apache.hadoop.util.NativeCodeLoader in play-dev-mode-akka.actor.default-dispatcher-4 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-2019-10-28 20:55:18,249 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:09:15,344 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 20:55:18,266 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
-2019-10-28 20:55:50,923 [ERROR] from application in application-akka.actor.default-dispatcher-5 - 
-
-! @7djh48m32 - Internal server error, for (GET) [/runspark] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[AnalysisException: Path does not exist: file:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/data.json;]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$3.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$3.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:346)
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:345)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:92)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:92)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:92)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: org.apache.spark.sql.AnalysisException: Path does not exist: file:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/data.json;
-	at org.apache.spark.sql.execution.datasources.DataSource$.org$apache$spark$sql$execution$datasources$DataSource$$checkAndGlobPathIfNecessary(DataSource.scala:719)
-	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:390)
-	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:390)
-	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
-	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
-	at scala.collection.immutable.List.foreach(List.scala:381)
-	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
-	at scala.collection.immutable.List.flatMap(List.scala:344)
-	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:389)
-	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:239)
-	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:227)
-	at org.apache.spark.sql.DataFrameReader.json(DataFrameReader.scala:397)
-	at org.apache.spark.sql.DataFrameReader.json(DataFrameReader.scala:340)
-	at controllers.SparkAppController$$anonfun$index$1.apply(SparkAppController.scala:17)
-	at controllers.SparkAppController$$anonfun$index$1.apply(SparkAppController.scala:14)
-	at play.api.mvc.ActionBuilder$$anonfun$async$1.apply(Action.scala:386)
-	at play.api.mvc.ActionBuilder$$anonfun$async$1.apply(Action.scala:386)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:489)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:487)
-	at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:426)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:98)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:91)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:184)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:192)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:184)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:180)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer$$anonfun$16.apply(AkkaHttpServer.scala:441)
-	at play.core.server.AkkaHttpServer$$anonfun$16.apply(AkkaHttpServer.scala:439)
-	at akka.http.scaladsl.util.FastFuture$.akka$http$scaladsl$util$FastFuture$$strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$$anonfun$transformWith$extension1$1.apply(FastFuture.scala:51)
-	at akka.http.scaladsl.util.FastFuture$$anonfun$transformWith$extension1$1.apply(FastFuture.scala:50)
-	... 13 common frames omitted
-2019-10-28 20:57:27,401 [WARN] from org.apache.spark.sql.SparkSession$Builder in play-dev-mode-akka.actor.default-dispatcher-7 - Using an existing SparkSession; some configuration may not take effect.
-2019-10-28 20:57:27,730 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:09:15,355 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev) (no global state)
+2019-10-29 13:09:15,888 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:09:15,891 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:09:42,951 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:09:42,951 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:12:19,514 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 20:57:27,732 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
-2019-10-28 20:57:36,577 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
-
-! @7djh4emal - Internal server error, for (GET) [/runspark] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[TreeNodeException: execute, tree:
-Exchange SinglePartition
-+- *(1) LocalLimit 100
-   +- *(1) FileScan json [_corrupt_record#6] Batched: false, Format: JSON, Location: InMemoryFileIndex[file:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/data.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<_corrupt_record:string>
-]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:351)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:267)
-	at play.core.server.AkkaHttpServer$$anonfun$3.applyOrElse(AkkaHttpServer.scala:448)
-	at play.core.server.AkkaHttpServer$$anonfun$3.applyOrElse(AkkaHttpServer.scala:446)
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:346)
-	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:345)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:92)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:92)
-	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:92)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:41)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:49)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: org.apache.spark.sql.catalyst.errors.package$TreeNodeException: execute, tree:
-Exchange SinglePartition
-+- *(1) LocalLimit 100
-   +- *(1) FileScan json [_corrupt_record#6] Batched: false, Format: JSON, Location: InMemoryFileIndex[file:/Users/Ambuj/IdeaProjects/play-scala-starter-example/conf/data.csv], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<_corrupt_record:string>
-
-	at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:56)
-	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.doExecute(ShuffleExchangeExec.scala:119)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
-	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
-	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
-	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:371)
-	at org.apache.spark.sql.execution.BaseLimitExec$class.inputRDDs(limit.scala:62)
-	at org.apache.spark.sql.execution.GlobalLimitExec.inputRDDs(limit.scala:107)
-	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
-	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
-	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
-	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.DeserializeToObjectExec.doExecute(objects.scala:89)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
-	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
-	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
-	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.MapPartitionsExec.doExecute(objects.scala:185)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
-	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
-	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
-	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:371)
-	at org.apache.spark.sql.execution.SerializeFromObjectExec.inputRDDs(objects.scala:110)
-	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
-	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
-	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
-	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan.getByteArrayRdd(SparkPlan.scala:247)
-	at org.apache.spark.sql.execution.SparkPlan.executeCollect(SparkPlan.scala:294)
-	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$collectFromPlan(Dataset.scala:3278)
-	at org.apache.spark.sql.Dataset$$anonfun$collectAsList$1.apply(Dataset.scala:2739)
-	at org.apache.spark.sql.Dataset$$anonfun$collectAsList$1.apply(Dataset.scala:2738)
-	at org.apache.spark.sql.Dataset$$anonfun$52.apply(Dataset.scala:3259)
-	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:77)
-	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3258)
-	at org.apache.spark.sql.Dataset.collectAsList(Dataset.scala:2738)
-	at controllers.SparkAppController$$anonfun$index$1.apply(SparkAppController.scala:20)
-	at controllers.SparkAppController$$anonfun$index$1.apply(SparkAppController.scala:14)
-	at play.api.mvc.ActionBuilder$$anonfun$async$1.apply(Action.scala:386)
-	at play.api.mvc.ActionBuilder$$anonfun$async$1.apply(Action.scala:386)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:489)
-	at play.api.mvc.ActionBuilderImpl.invokeBlock(Action.scala:487)
-	at play.api.mvc.ActionBuilder$$anon$2.apply(Action.scala:426)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:98)
-	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:91)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:184)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2$$anonfun$1.apply(Accumulator.scala:184)
-	at scala.util.Try$.apply(Try.scala:192)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:184)
-	at play.api.libs.streams.StrictAccumulator$$anonfun$mapFuture$2.apply(Accumulator.scala:180)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at scala.Function1$$anonfun$andThen$1.apply(Function1.scala:52)
-	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:219)
-	at play.core.server.AkkaHttpServer$$anonfun$16.apply(AkkaHttpServer.scala:441)
-	at play.core.server.AkkaHttpServer$$anonfun$16.apply(AkkaHttpServer.scala:439)
-	at akka.http.scaladsl.util.FastFuture$.akka$http$scaladsl$util$FastFuture$$strictTransform$1(FastFuture.scala:41)
-	at akka.http.scaladsl.util.FastFuture$$anonfun$transformWith$extension1$1.apply(FastFuture.scala:51)
-	at akka.http.scaladsl.util.FastFuture$$anonfun$transformWith$extension1$1.apply(FastFuture.scala:50)
-	... 13 common frames omitted
-Caused by: org.apache.spark.sql.AnalysisException: Since Spark 2.3, the queries from raw JSON/CSV files are disallowed when the
-referenced columns only include the internal corrupt record column
-(named _corrupt_record by default). For example:
-spark.read.schema(schema).json(file).filter($"_corrupt_record".isNotNull).count()
-and spark.read.schema(schema).json(file).select("_corrupt_record").show().
-Instead, you can cache or save the parsed results and then send the same query.
-For example, val df = spark.read.schema(schema).json(file).cache() and then
-df.filter($"_corrupt_record".isNotNull).count().;
-	at org.apache.spark.sql.execution.datasources.json.JsonFileFormat.buildReader(JsonFileFormat.scala:118)
-	at org.apache.spark.sql.execution.datasources.FileFormat$class.buildReaderWithPartitionValues(FileFormat.scala:129)
-	at org.apache.spark.sql.execution.datasources.TextBasedFileFormat.buildReaderWithPartitionValues(FileFormat.scala:160)
-	at org.apache.spark.sql.execution.FileSourceScanExec.inputRDD$lzycompute(DataSourceScanExec.scala:297)
-	at org.apache.spark.sql.execution.FileSourceScanExec.inputRDD(DataSourceScanExec.scala:295)
-	at org.apache.spark.sql.execution.FileSourceScanExec.inputRDDs(DataSourceScanExec.scala:315)
-	at org.apache.spark.sql.execution.BaseLimitExec$class.inputRDDs(limit.scala:62)
-	at org.apache.spark.sql.execution.LocalLimitExec.inputRDDs(limit.scala:97)
-	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)
-	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
-	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)
-	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)
-	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.prepareShuffleDependency(ShuffleExchangeExec.scala:92)
-	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec$$anonfun$doExecute$1.apply(ShuffleExchangeExec.scala:128)
-	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec$$anonfun$doExecute$1.apply(ShuffleExchangeExec.scala:119)
-	at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:52)
-	... 85 common frames omitted
-2019-10-28 20:59:35,182 [WARN] from org.apache.spark.sql.SparkSession$Builder in play-dev-mode-akka.actor.default-dispatcher-16 - Using an existing SparkSession; some configuration may not take effect.
-2019-10-28 20:59:35,481 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:12:19,521 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev) (no global state)
+2019-10-29 13:12:19,530 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:12:19,530 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:12:44,690 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 20:59:35,484 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev) (no global state)
-2019-10-28 21:12:28,346 [WARN] from org.apache.spark.sql.SparkSession$Builder in play-dev-mode-akka.actor.default-dispatcher-30 - Using an existing SparkSession; some configuration may not take effect.
-2019-10-28 21:12:28,618 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-30 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:12:44,692 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev) (no global state)
+2019-10-29 13:12:44,699 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:12:44,700 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:13:18,904 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 21:12:28,620 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-30 - Application started (Dev) (no global state)
-2019-10-28 21:14:44,633 [WARN] from org.apache.spark.sql.SparkSession$Builder in play-dev-mode-akka.actor.default-dispatcher-29 - Using an existing SparkSession; some configuration may not take effect.
-2019-10-28 21:14:44,945 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:13:18,907 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev) (no global state)
+2019-10-29 13:13:18,945 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:13:18,945 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:13:23,463 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:13:23,463 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:13:25,933 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:13:25,934 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:13:26,807 [WARN] from org.apache.hadoop.util.NativeCodeLoader in application-akka.actor.default-dispatcher-3 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2019-10-29 13:13:52,787 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:13:52,787 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:14:29,999 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-4 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:14:29,999 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-4 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:14:57,180 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:14:57,180 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:19:25,592 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 21:14:44,948 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev) (no global state)
-2019-10-28 21:17:54,241 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:19:25,594 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev) (no global state)
+2019-10-29 13:19:25,639 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:19:25,639 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:19:29,811 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:19:29,811 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:20:05,282 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-20 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 21:17:54,243 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev) (no global state)
-2019-10-28 21:17:54,931 [WARN] from org.apache.spark.sql.SparkSession$Builder in application-akka.actor.default-dispatcher-6 - Using an existing SparkSession; some configuration may not take effect.
-2019-10-28 21:25:51,876 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
-2019-10-28 21:25:54,231 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-45 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-10-29 13:20:05,284 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-20 - Application started (Dev) (no global state)
+2019-10-29 13:20:05,473 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:20:05,473 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-3 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:25:20,636 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:25:20,636 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:26:28,589 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-10-28 21:25:54,237 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-45 - Application started (Dev) (no global state)
+2019-10-29 13:26:28,591 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev) (no global state)
+2019-10-29 13:26:28,612 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-4 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:26:28,612 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-4 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:27:00,765 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:27:00,765 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:27:12,120 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:27:12,120 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:27:12,137 [WARN] from org.apache.spark.sql.SparkSession$Builder in application-akka.actor.default-dispatcher-2 - Using an existing SparkSession; some configuration may not take effect.
+2019-10-29 13:27:21,617 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:27:21,617 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:27:29,899 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:27:29,899 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-2 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:27:59,010 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:27:59,010 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:28:05,814 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:28:05,814 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:28:09,063 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-6 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:28:09,063 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-6 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:28:15,322 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-6 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:28:15,323 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-6 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:28:25,156 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-6 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:28:25,157 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-6 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:43:28,342 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:43:28,342 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-5 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:43:59,489 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-7 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:43:59,489 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-7 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:44:13,957 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-7 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:44:13,958 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-7 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:44:18,637 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-7 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:44:18,637 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-7 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 13:47:56,790 [WARN] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-8 - decode: cookie has invalid signature! message = JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+2019-10-29 13:47:56,790 [INFO] from play.api.mvc.DefaultJWTCookieDataCodec in application-akka.actor.default-dispatcher-8 - The JWT signature in the cookie does not match the locally computed signature with the server. This usually indicates the browser has a leftover cookie from another Play application, so clearing cookies may resolve this error message.
+2019-10-29 14:57:26,771 [WARN] from org.apache.spark.HeartbeatReceiver in dispatcher-event-loop-1 - Removing executor driver with no recent heartbeats: 4112205 ms exceeds timeout 120000 ms
+2019-10-29 14:57:26,782 [ERROR] from org.apache.spark.scheduler.TaskSchedulerImpl in dispatcher-event-loop-1 - Lost executor driver on localhost: Executor heartbeat timed out after 4112205 ms
+2019-10-29 14:57:27,367 [WARN] from org.apache.spark.storage.BlockManagerMasterEndpoint in dispatcher-event-loop-0 - No more replicas available for broadcast_27_piece0 !
+2019-10-29 14:57:27,367 [WARN] from org.apache.spark.storage.BlockManagerMasterEndpoint in dispatcher-event-loop-0 - No more replicas available for broadcast_25_piece0 !
+2019-10-29 14:57:27,367 [WARN] from org.apache.spark.storage.BlockManagerMasterEndpoint in dispatcher-event-loop-0 - No more replicas available for broadcast_26_piece0 !
+2019-10-29 14:57:27,367 [WARN] from org.apache.spark.storage.BlockManagerMasterEndpoint in dispatcher-event-loop-0 - No more replicas available for broadcast_28_piece0 !
+2019-10-29 14:57:27,368 [WARN] from org.apache.spark.storage.BlockManagerMasterEndpoint in dispatcher-event-loop-0 - No more replicas available for broadcast_24_piece0 !
+2019-10-29 14:57:27,368 [WARN] from org.apache.spark.storage.BlockManagerMasterEndpoint in dispatcher-event-loop-0 - No more replicas available for broadcast_29_piece0 !
+2019-10-29 14:57:27,394 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-shutdown-hook-1 - Stopping server...
+2019-10-29 14:57:27,411 [WARN] from org.apache.spark.SparkContext in kill-executor-thread - Killing executors is not supported by current scheduler.

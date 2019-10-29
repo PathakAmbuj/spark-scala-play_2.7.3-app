@@ -24,7 +24,7 @@ class SparkAppController @Inject()(cc: ControllerComponents)(implicit assetsFind
     }
   }
 
-  def getJson(filePath: String, outputCols: String, maxRow: String): Action[AnyContent] = {
+  def getJson(outputCols: String, filePath: String, maxRow: String, schema: String): Action[AnyContent] = {
     Action.async {
 
       val row = maxRow.toInt
