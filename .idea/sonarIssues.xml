@@ -3,12 +3,22 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../SparkTester/src/com/ap/spark/TestSaprk.scala">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/controllers/FormController.scala">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/controllers/HomeController.scala">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/controllers/HtmlTableController.scala">
           <value>
             <set />
           </value>
@@ -23,7 +33,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/services/SparkAsService.scala">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/views/form.scala.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/table.scala.html">
           <value>
             <set />
           </value>

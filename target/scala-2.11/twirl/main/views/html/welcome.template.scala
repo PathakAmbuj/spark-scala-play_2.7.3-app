@@ -37,6 +37,7 @@ Below are the link for testing Rest api services
 <p>To get Json as response >>><a href="http://localhost:9000/runspark">Click Here</a><<<</p>
 <p>To Go to Job Submit Page >>><a href="/jobpage">Click Here</a></p>
 <p>To Go to Create Job Page >>><a href="/form">Click Here</a></p>
+<p>To Get File as Formatted Table >>><a href="/gettable">Click Here</a></p>
 </body>
 </html>"""))
       }
@@ -54,9 +55,9 @@ Below are the link for testing Rest api services
 
               /*
                   -- GENERATED --
-                  DATE: 2019-10-29T13:26:26.602
+                  DATE: 2019-10-29T20:03:26.983
                   SOURCE: /Users/Ambuj/IdeaProjects/play-scala-spark-app/app/views/welcome.scala.html
-                  HASH: 32fd70d2358ab9487a8a3748d5b0bf269b9880e3
+                  HASH: 5a59b275cb79429990a70c44f33f739df9c5558d
                   MATRIX: 813->0
                   LINES: 26->1
                   -- GENERATED --

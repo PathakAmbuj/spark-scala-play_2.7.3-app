@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-spark-app/conf/routes
-// @DATE:Tue Oct 29 13:13:14 IST 2019
+// @DATE:Tue Oct 29 20:03:26 IST 2019
 
 import play.api.mvc.Call
 
@@ -48,6 +48,21 @@ package controllers {
     def versioned(file:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:17
+  class ReverseHtmlTableController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def getHtmlTableAction(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "gettable")
     }
   
   }

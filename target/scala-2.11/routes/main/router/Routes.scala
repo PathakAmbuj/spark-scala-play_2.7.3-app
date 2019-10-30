@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/Ambuj/IdeaProjects/play-scala-spark-app/conf/routes
-// @DATE:Tue Oct 29 13:13:14 IST 2019
+// @DATE:Tue Oct 29 20:03:26 IST 2019
 
 package router
 
@@ -16,11 +16,13 @@ class Routes(
   // @LINE:6
   LoginController_0: controllers.LoginController,
   // @LINE:9
-  HomeController_4: controllers.HomeController,
+  HomeController_5: controllers.HomeController,
   // @LINE:11
-  FormController_3: controllers.FormController,
+  FormController_4: controllers.FormController,
   // @LINE:14
   SparkAppController_1: controllers.SparkAppController,
+  // @LINE:17
+  HtmlTableController_3: controllers.HtmlTableController,
   // @LINE:19
   Assets_2: controllers.Assets,
   val prefix: String
@@ -31,19 +33,21 @@ class Routes(
     // @LINE:6
     LoginController_0: controllers.LoginController,
     // @LINE:9
-    HomeController_4: controllers.HomeController,
+    HomeController_5: controllers.HomeController,
     // @LINE:11
-    FormController_3: controllers.FormController,
+    FormController_4: controllers.FormController,
     // @LINE:14
     SparkAppController_1: controllers.SparkAppController,
+    // @LINE:17
+    HtmlTableController_3: controllers.HtmlTableController,
     // @LINE:19
     Assets_2: controllers.Assets
-  ) = this(errorHandler, LoginController_0, HomeController_4, FormController_3, SparkAppController_1, Assets_2, "/")
+  ) = this(errorHandler, LoginController_0, HomeController_5, FormController_4, SparkAppController_1, HtmlTableController_3, Assets_2, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, LoginController_0, HomeController_4, FormController_3, SparkAppController_1, Assets_2, prefix)
+    new Routes(errorHandler, LoginController_0, HomeController_5, FormController_4, SparkAppController_1, HtmlTableController_3, Assets_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -58,6 +62,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """runspark""", """controllers.SparkAppController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getjson""", """controllers.SparkAppController.getJson(selectColumns:String, filePath:String, maxRow:String, schema:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """submitjob""", """controllers.SparkAppController.runSparkJob(jarPath:String, mainClass:String, appName:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """gettable""", """controllers.HtmlTableController.getHtmlTableAction"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -89,7 +94,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_HomeController_loginCheck1_invoker = createInvoker(
-    HomeController_4.loginCheck(fakeValue[String], fakeValue[String]),
+    HomeController_5.loginCheck(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -107,7 +112,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("jobpage")))
   )
   private[this] lazy val controllers_HomeController_jobpage2_invoker = createInvoker(
-    HomeController_4.jobpage,
+    HomeController_5.jobpage,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -125,7 +130,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("form")))
   )
   private[this] lazy val controllers_FormController_index3_invoker = createInvoker(
-    FormController_3.index,
+    FormController_4.index,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.FormController",
@@ -192,11 +197,29 @@ class Routes(
     )
   )
 
+  // @LINE:17
+  private[this] lazy val controllers_HtmlTableController_getHtmlTableAction7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("gettable")))
+  )
+  private[this] lazy val controllers_HtmlTableController_getHtmlTableAction7_invoker = createInvoker(
+    HtmlTableController_3.getHtmlTableAction,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HtmlTableController",
+      "getHtmlTableAction",
+      Nil,
+      "GET",
+      this.prefix + """gettable""",
+      """""",
+      Seq()
+    )
+  )
+
   // @LINE:19
-  private[this] lazy val controllers_Assets_versioned7_route = Route("GET",
+  private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned7_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned8_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -222,19 +245,19 @@ class Routes(
     // @LINE:9
     case controllers_HomeController_loginCheck1_route(params@_) =>
       call(params.fromQuery[String]("txtUserName", None), params.fromQuery[String]("txtPassword", None)) { (txtUserName, txtPassword) =>
-        controllers_HomeController_loginCheck1_invoker.call(HomeController_4.loginCheck(txtUserName, txtPassword))
+        controllers_HomeController_loginCheck1_invoker.call(HomeController_5.loginCheck(txtUserName, txtPassword))
       }
   
     // @LINE:10
     case controllers_HomeController_jobpage2_route(params@_) =>
       call { 
-        controllers_HomeController_jobpage2_invoker.call(HomeController_4.jobpage)
+        controllers_HomeController_jobpage2_invoker.call(HomeController_5.jobpage)
       }
   
     // @LINE:11
     case controllers_FormController_index3_route(params@_) =>
       call { 
-        controllers_FormController_index3_invoker.call(FormController_3.index)
+        controllers_FormController_index3_invoker.call(FormController_4.index)
       }
   
     // @LINE:14
@@ -255,10 +278,16 @@ class Routes(
         controllers_SparkAppController_runSparkJob6_invoker.call(SparkAppController_1.runSparkJob(jarPath, mainClass, appName))
       }
   
+    // @LINE:17
+    case controllers_HtmlTableController_getHtmlTableAction7_route(params@_) =>
+      call { 
+        controllers_HtmlTableController_getHtmlTableAction7_invoker.call(HtmlTableController_3.getHtmlTableAction)
+      }
+  
     // @LINE:19
-    case controllers_Assets_versioned7_route(params@_) =>
+    case controllers_Assets_versioned8_route(params@_) =>
       call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_Assets_versioned7_invoker.call(Assets_2.versioned(file))
+        controllers_Assets_versioned8_invoker.call(Assets_2.versioned(file))
       }
   }
 }
