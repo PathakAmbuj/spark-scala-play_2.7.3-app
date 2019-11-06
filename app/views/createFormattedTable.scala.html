@@ -1,0 +1,62 @@
+@import org.apache.spark.sql.Row
+@(head: Array[String], body: List[Row])
+<html>
+<head>
+    <style>
+table tbody, table thead
+{
+    display: block;
+}
+table tbody
+{
+   overflow: auto;
+   height: 500px;
+}
+table thead
+{
+
+	background:#f9f9fe;
+}
+th
+{
+	height : 50px;
+	width : 150px;
+	text-align : left;
+	border: 1px solid black;"
+}
+td
+{
+    width : 150px;
+    text-align: left;
+	border: 1px solid black;"
+}
+
+    </style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+<table>
+    <thead>
+    <tr>
+        @for(h <- head) {
+        <th>
+            @h
+        </th>
+        }
+    </tr>
+    </thead>
+    <tbody>
+    @for(b <- body) {
+    <tr>
+        @for(h <- head.indices) {
+        <td>
+            @b.get(h)
+        </td>
+        }
+    </tr>
+    }
+    </tbody>
+</table>
+</body>
+</html>
