@@ -17,7 +17,7 @@ class HtmlTableController @Inject()(cc: ControllerComponents)(implicit assetsFin
     Action.async {
       { 
         val readDF = spark.read.format("csv").option("sep", ",")
-          .option("header", "true").load("/Users/Ambuj/Downloads/aapl.csv")
+          .option("header", "true").load("conf/data.csv")
 
         val schema = readDF.schema
         val scm = schema.fieldNames
